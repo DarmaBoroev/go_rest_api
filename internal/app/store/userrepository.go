@@ -12,7 +12,7 @@ func (r *UserRepository) Create(u *model.User) (*model.User, error) {
     }
 
     if err := u.BeforeCreate(); err != nil {
-       return nil, err
+        return nil, err
     }
 
     if err := r.store.db.QueryRow(

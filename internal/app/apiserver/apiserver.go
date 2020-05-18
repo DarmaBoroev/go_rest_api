@@ -12,7 +12,7 @@ type APIServer struct {
     config *Config
     logger *logrus.Logger
     router *mux.Router
-    store *store.Store
+    store  *store.Store
 }
 
 func New(config *Config) *APIServer {
@@ -65,7 +65,7 @@ func (s *APIServer) configureStore() error {
     return nil
 }
 
-func (s *APIServer) handleHello() http.HandlerFunc  {
+func (s *APIServer) handleHello() http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
         io.WriteString(w, "Hello")
     }
